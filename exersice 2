@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - Number Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #1976D2;
+        }
+        .instructions {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Exercise 2: Number Validation</h2>
+        
+        <div class="instructions">
+            <strong>Instructions:</strong> Enter a number and click "Check" to see if it's higher or lower than 10.
+        </div>
+        
+        <input type="text" id="userInput" placeholder="Enter a number">
+        <button onclick="checkInput()">Check</button>
+    </div>
+
+    <script>
+        function checkInput() {
+            // Get the input value
+            const userInput = document.getElementById("userInput").value;
+            
+            // Check if input is empty
+            if (userInput === "") {
+                alert("Please insert a number!");
+                return;
+            }
+            
+            // Convert input to number
+            const number = Number(userInput);
+            
+            // Check if the input is not a number (NaN)
+            if (isNaN(number)) {
+                alert("Please insert a number!");
+            } else if (number < 10) {
+                alert("The number is lower than 10");
+            } else {
+                alert("The number is higher than 10");
+            }
+        }
+    </script>
+</body>
+</html>
